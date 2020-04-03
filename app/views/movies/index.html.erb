@@ -1,0 +1,28 @@
+<h1>Movie Listing</h1>
+<table class="table">
+    <thead>
+        <tr><th colspan="3"></th></tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><strong>Name</strong></td>
+            <td><strong>Genre</strong></td>
+            <td><strong>Year Released</strong></td>
+        </tr>
+        <tr>
+            <% @movies.each do |movie| %>
+            <td><%= movie.title %> </td><td><%= movie.genre%></td><td><%=movie.year_released %></td>
+        <td>
+            <% if current_user.admin? %>
+                <%= link_to "Edit", movie_path(movie) %>
+            <% else %>
+                <%= link_to "View", movie_path(movie) %>
+            <% end %>
+        </td>
+        
+        </tr><% end %>
+    </tbody>
+</table>
+<% if logged_in? && current_user.admin %>
+    <%= link_to 'Add New Movie', new_movie_path %>
+<% end %>
