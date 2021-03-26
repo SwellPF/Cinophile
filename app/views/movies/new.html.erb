@@ -7,7 +7,7 @@
 <%= f.text_area :description, size: "60x12" %></p>
 
 <p><%= f.label :genre %><br>
-<%= f.text_field :genre %></p>
+<%= f.collection_select :genre_id, Genre.all, :id, :name %></p>
 
 <p><%= f.label :year_released %><br>
 <%= f.number_field :year_released %></p>

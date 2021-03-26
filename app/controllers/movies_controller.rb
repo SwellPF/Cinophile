@@ -13,6 +13,7 @@ class MoviesController < ApplicationController
     end
     
     def show
+        #raise params.inspect
         @movie = Movie.find_by(id: params[:id])
     end
 
@@ -41,6 +42,6 @@ class MoviesController < ApplicationController
 private
 
     def movie_params
-        params.require(:movie).permit(:name, :genre, :rating, :comments)
+        params.require(:movie).permit(:title, :genre_id, :year_released, :description)
     end
 end
