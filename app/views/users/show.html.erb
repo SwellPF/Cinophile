@@ -1,7 +1,8 @@
 <%=flash[:success] %>
 
-<h1>Show User</h1>
-<% if @user.admin %>
-<b>ADMIN</b><br>
-<% end %>
-Name: <%= @user.name %><br>
+<h1>Hello, <%=@user.name %></h1>
+ 
+Email: <%= @user.email %><br>
+
+
+<%= link_to "List of Movies", movies_path %>

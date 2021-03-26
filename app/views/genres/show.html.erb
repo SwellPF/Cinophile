@@ -1,0 +1,12 @@
+<h2>Genre Details</h2>
+
+<%= @genre.name %>
+
+<ul>
+    <% @genre.movies.each do |movie| %>
+<li>
+    <%= movie.name %>
+</li>
+<% end %>
+</ul>
+

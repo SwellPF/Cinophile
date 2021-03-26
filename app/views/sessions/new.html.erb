@@ -1,7 +1,7 @@
 <h2>Log in to Cinophile!</h2>
 <%= form_tag({controller: 'sessions', action: 'create', method: 'post'}) do %>
 <label>Email Address:</label>
-<input name="email" type="email"><br>
-<label>Your password:  </label><input name="password" type="password"><br>
+<input name="user[email]" type="email"><br>
+<label>Your password:  </label><input name="user[password]" type="password"><br>
 <input type="submit" value='Sign In'>
 <% end %>
