@@ -12,8 +12,6 @@ class MoviesController < ApplicationController
         end
     end
     
-    
-    
     def show
         @movie = Movie.find_by(id: params[:id])
     end

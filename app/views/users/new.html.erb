@@ -1,0 +1,12 @@
+<h2>Sign up to join Cinophile!</h2>
+<%= form_for @user do |f| %>
+
+<p><%= f.label :email %><br>
+<%= f.text_field :email %></p>
+  
+<p><%= f.label :password %><br>
+<%= f.password_field :email %></p>
+
+<%= f.submit "Create account" %>
+    
+<% end %>

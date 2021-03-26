@@ -1,0 +1,7 @@
+<%=flash[:success] %>
+
+<h1>Show User</h1>
+<% if @user.admin %>
+<b>ADMIN</b><br>
+<% end %>
+Name: <%= @user.name %><br>
