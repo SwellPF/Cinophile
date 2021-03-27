@@ -10,11 +10,11 @@
 </b></h2>
 <ul>
     <li>
+<% raise params.inspect %>
 <% @movie.comments.each do |comment| %>
-raise params.inspect
+
 <%= comment.content %> 
 <p>By: <%= comment.user %> - <%= comment.created_at %>
 </li>
 <% end %>
 </ul>
-<% end %>
