@@ -4,3 +4,17 @@
 <p><b>Description: </b><%= @movie.description %></p>
 <p><b>Genre: </b><%= @movie.genre.name %></p>
 <p><b>Year Released: </b><%= @movie.year_released %></p>
+
+<h2><b>
+    Comments:
+</b></h2>
+<ul>
+    <li>
+<% @movie.comments.each do |comment| %>
+raise params.inspect
+<%= comment.content %> 
+<p>By: <%= comment.user %> - <%= comment.created_at %>
+</li>
+<% end %>
+</ul>
+<% end %>
