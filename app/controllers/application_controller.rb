@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-
+require 'pry'
 helper_method :current_user, :logged_in?
 
 private

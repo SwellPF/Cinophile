@@ -8,13 +8,7 @@
 <h2><b>
     Comments:
 </b></h2>
-<ul>
-    <li>
-<% raise params.inspect %>
-<% @movie.comments.each do |comment| %>
+<%= link_to "Add a Comment", new_comment_path %>
+<%= link_to "Edit movie", edit_movie_path(@movie) %>
+<%= link_to "Movie List", movies_path %>
 
-<%= comment.content %> 
-<p>By: <%= comment.user %> - <%= comment.created_at %>
-</li>
-<% end %>
-</ul>

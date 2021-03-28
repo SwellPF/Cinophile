@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-
+    require 'pry'
     def new
         @movie = Movie.new
     end
@@ -13,8 +13,8 @@ class MoviesController < ApplicationController
     end
     
     def show
-        #raise params.inspect
         @movie = Movie.find_by(id: params[:id])
+       
     end
 
     def create

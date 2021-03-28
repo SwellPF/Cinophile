@@ -14,7 +14,7 @@
             <td><%= movie.title %> </td><td><%= movie.genre.name%></td><td><%=movie.year_released %></td>
         <td>
             <#% if current_user.admin? %>  
-                <%= link_to "Edit", movie_path(movie) %>
+                <%= link_to "Edit", edit_movie_path(movie) %>
                 <#% else %> 
                 <%= link_to "View", movie_path(movie) %>
             <#% end %>  
