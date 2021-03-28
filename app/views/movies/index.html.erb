@@ -1,4 +1,6 @@
 <h1>Movie Listing</h1>
+<b>Genre Filter:</b>
+
 <table class="table">
     <thead>
         <tr><th colspan="3"></th></tr>
@@ -13,16 +15,17 @@
             <% @movies.each do |movie| %>
             <td><%= movie.title %> </td><td><%= movie.genre.name%></td><td><%=movie.year_released %></td>
         <td>
-            <#% if current_user.admin? %>  
-                <%= link_to "Edit", edit_movie_path(movie) %>
-                <#% else %> 
-                <%= link_to "View", movie_path(movie) %>
-            <#% end %>  
+            <% if current_user %>  
+                <%= link_to "Edit", edit_movie_path(movie), class: "button" %>
+               
+                <%= link_to "View", movie_path(movie), class: "button" %>
+            <% end %>  
         </td>
         
         </tr><% end %>
     </tbody>
 </table>
-<#% if logged_in? && current_user.admin %>
-    <%= link_to 'Add New Movie', new_movie_path %>
-<#% end %>
+<% if logged_in? && current_user %>
+    <%= link_to 'Add New Movie', new_movie_path, class: "button" %>
+    <%= button_to "Add New Movie", new_movie_path, :method => "get" %>
+<% end %>
