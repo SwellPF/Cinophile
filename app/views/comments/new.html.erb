@@ -1,4 +1,12 @@
-<h2>Add a Comment for @</h2>
+<h2>Add a Comment for movie</h2>
 
+<%= form_for @comment do |f| %>
 
-<%= link_to 'Return to movie list', movies_path %>
+<p><%= f.label :content %><br>
+<%= f.text_area :content, size: "60x12" %></p>
+
+<%= f.submit "Post comment" %>
+    
+<% end %>
+
+<%= button_to 'Return to movie list', movies_path, method: 'get' %>
