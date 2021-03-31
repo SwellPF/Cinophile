@@ -1,8 +1,11 @@
 <%=flash[:success] %>
 
-<h1>Hello, <%=@user.name %></h1>
+<h2>Hello, <%=@user.name %></h2>
  
 Email: <%= @user.email %><br>
 
 
 <%= link_to "List of Movies", movies_path, class: "button" %>
+<% if current_user.admin %>
+    <%= link_to "List of Users", users_path, class: "button" %>
+    <% end %>

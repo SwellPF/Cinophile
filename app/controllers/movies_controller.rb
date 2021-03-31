@@ -5,15 +5,24 @@ class MoviesController < ApplicationController
     end
 
     def index
+    # binding.pry
         if current_user
-            @movies = Movie.all
+            if params[:movie] && params[:movie][:genre_id].present?
+                @movies = Movie.filter_by_genre(params[:movie][:genre_id])
+            else
+                @movies = Movie.all
+            end
         else
             redirect_to '/'
         end
     end
     
     def show
-        @movie = Movie.find_by(id: params[:id])
+        if current_user
+            @movie = Movie.find_by(id: params[:id])
+        else
+            redirect_to '/'
+        end
        
     end
 

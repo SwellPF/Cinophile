@@ -1,6 +1,6 @@
-<h2>Add a Comment for movie</h2>
+<h2>Add a Comment for --name of movie--</h2>
 
-<%= form_for @comment do |f| %>
+<%= form_for [@movie, @comment] do |f| %>
 
 <p><%= f.label :content %><br>
 <%= f.text_area :content, size: "60x12" %></p>

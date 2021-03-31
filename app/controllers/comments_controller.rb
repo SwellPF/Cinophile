@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
 
     def new
-        @comment = Comment.new(movie_id: params[:movie_id])
+        binding.pry
+        @movie = Movie.find_by(id: movie[movie_id])
+        binding.pry
+        @comment = Comment.new(movie_id: params[:movie_id], user_id: current_user)
+        binding.pry
+
     end
     
     def create
@@ -57,6 +62,6 @@ class CommentsController < ApplicationController
     private
 
     def comment_params
-        params.require(:comment).permit(:content, :movie_id)
+        params.require(:comment).permit(:content, :movie_id, :user_id)
     end
 end

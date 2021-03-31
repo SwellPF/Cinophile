@@ -1,5 +1,10 @@
 <h1>Movie Listing</h1>
 <b>Genre Filter:</b>
+    
+    <%= form_tag(movies_path, {method: :get}) do %>
+            <%= select_tag "movie[genre_id]", options_from_collection_for_select(Genre.all, :id, :name), {include_blank: true} %>
+            <%= submit_tag "Apply Filter" %>
+    <% end %>
 
 <table class="table">
     <thead>
@@ -7,7 +12,7 @@
     </thead>
     <tbody>
         <tr>
-            <td><strong>Name</strong></td>
+            <td><strong>Title</strong></td>
             <td><strong>Genre</strong></td>
             <td><strong>Year Released</strong></td>
         </tr>
@@ -24,6 +29,7 @@
         </tr><% end %>
     </tbody>
 </table>
+
 <% if logged_in? && current_user.admin? %>
     <%= link_to 'Add New Movie', new_movie_path, class: "button" %>
     <%= button_to "Add New Movie", new_movie_path, :method => "get" %>

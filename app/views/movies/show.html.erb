@@ -1,4 +1,4 @@
-<h1>Here are the movie details!</h1>
+<h1>Movie Details:</h1>
 
 <h2><%= @movie.title %></h2>
 <p><b>Description: </b><%= @movie.description %></p>
@@ -7,14 +7,24 @@
 
 <h2><b>
     Comments:
+    <% binding.pry %>
+    <% @movie.comments.each do |comment| %>
+    <%= link_to comment.user.name, user_path(comment.user) %> said
+    <%= comment.content %>
+  <% end %>
 
-<% binding.pry %>
 </b></h2>
 
-<%= hidden_field_tag :movie_id, @movie.id %>
+    <%= form_tag({controller: "comments", action: "new"}, method: "get") do %>
+    <%= label_tag(:comment, "Comment:") %>
+    <%= text_field_tag(:comment) %>
+    <%= hidden_field :movie_id, @movie.id %>
+    <%= submit_tag("Submit my Comment") %>
+    <% end %>
+
 <%= link_to "Add a Comment", new_comment_path, class: "button" %>
- 
 <%= link_to "Movie List", movies_path, class: "button" %>
 <% if current_user.admin? %>
     <%= link_to "Edit movie", edit_movie_path(@movie), class: "button" %>
 <% end %>
+<% binding.pry %>

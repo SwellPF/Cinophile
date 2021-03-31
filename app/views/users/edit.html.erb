@@ -28,6 +28,9 @@
 <%= f.password_field :password %></p>
 </div>
 
+<p><%= f.label :admin, 'Are you an admin?' %>
+<%= f.check_box :admin %></p>
+
 <%= f.submit "Edit user account" %>
     
 <% end %>
