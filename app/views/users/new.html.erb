@@ -4,7 +4,7 @@
     <div id = "error explanation">
         <h3>There were some errors:</h3>
         <ul>
-            <%@user.errors.full_messages.each do |message| %>
+            <% @user.errors.full_messages.each do |message| %>
                 <li><%= message %></li>
                 <% end %>
         </ul>
