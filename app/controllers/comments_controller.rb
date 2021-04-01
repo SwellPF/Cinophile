@@ -1,22 +1,21 @@
 class CommentsController < ApplicationController
 
     def new
-        binding.pry
-        @movie = Movie.find_by(id: movie[movie_id])
-        binding.pry
-        @comment = Comment.new(movie_id: params[:movie_id], user_id: current_user)
-        binding.pry
-
+        
     end
     
     def create
-        @comment = Comment.new(comment_params)
-    
-        if @comment.save
-          redirect_to @comment
-        else
-          render :new
-        end
+      
+      @movie = Movie.find_by(id: params[:movie_id])
+      
+      @comment = Comment.new(movie_id: params[:movie_id], user_id: current_user.id)
+      @comment.content = params[:content]
+      
+      if @comment.save
+          redirect_to @movie
+      else
+          render 'movie/show'
+      end
     end
 
     def index
