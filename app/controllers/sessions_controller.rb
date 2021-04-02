@@ -5,14 +5,14 @@ class SessionsController < ApplicationController
     end
 
     def omniauth
-        @user = User.create_from_omniauth(auth)
-
-        if @user.valid?
-            session[:user_id] = @user.id
-            redirect_to @user
+        user = User.from_omniauth(auth)
+        binding.pry
+        if user.valid?
+            session[:user_id] = user.id
+            redirect_to user_path(user)
         else
             flash[:notice] = 'Invalid username or password.'
-            render 'new'
+            redirect_to '/login'
         end
     end
 

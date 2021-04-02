@@ -27,7 +27,7 @@
 
          
         <% else %>
-            <a class="navbar-brand" href="<%= user_path(current_user) %>"><%=current_user.name %></a>
+            <a class="navbar-brand" href="<%= user_path(current_user) %>">Logged in as: <%=current_user.name %></a>
             <a class="navbar-brand" href="<%= logout_path %>">Log Out</a>
         <% end %>
         </div>

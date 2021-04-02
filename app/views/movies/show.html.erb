@@ -17,9 +17,9 @@
 <br><br>
 
 <button><%= link_to "Return to Movie List", movies_path %></button>
-<%= link_to "Add Movie to My Watchlist", movies_path, class: "button" %>
+<button><%= link_to "Add Movie to My Watchlist", movies_path %></button>
 <% if current_user.admin? %>
-    <%= link_to "Edit movie", edit_movie_path(@movie), class: "button" %>
+<button><%= link_to "Edit movie", edit_movie_path(@movie) %></button>
 <% end %>
 
 <b><h3>User Comments:</h3></b>
