@@ -4,22 +4,20 @@ class SessionsController < ApplicationController
         @user = User.new
     end
 
+    def omniauth
+        @user = User.create_from_omniauth(auth)
+
+        if @user.valid?
+            session[:user_id] = @user.id
+            redirect_to @user
+        else
+            flash[:notice] = 'Invalid username or password.'
+            render 'new'
+        end
+    end
+
 
     def create
-        byebug 
-        if auth
-            @user = User.find_or_create_by(email: auth['info']['email']) do |u|
-                u.name = auth['info']['name']
-                u.image = auth['info']['image']
-                u.password = SecureRandom.hex(10)
-            end
-            if @user.persisted?
-                    session[:user_id] = @user.id
-                    redirect_to @user
-            else
-                redirect_to root_path
-            end
-        else
             @user = User.find_by(email: params[:user][:email])
             if @user && @user.authenticate(params[:user][:password])
                 session[:user_id] = @user.id
@@ -29,9 +27,6 @@ class SessionsController < ApplicationController
                 render 'new'
             end
     end   
-     
-        render 'application/hello'
-      end
 
 
 

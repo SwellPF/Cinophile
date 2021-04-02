@@ -22,8 +22,10 @@
         <% if !logged_in? %>
             <a class="navbar-brand" href="<%= signup_url %>">Sign Up </a>
             <a class="navbar-brand" href="<%= signin_url %>">Log In </a>
-            <a class="navbar-brand" href="<%= signin_url %>">Log In Via Facebook</a>
+          <%= button_to "Log in with Facebook", '/auth/facebook' %>
+          <%= button_to "Log in with Google", '/auth/google_oauth2' %>
 
+         
         <% else %>
             <a class="navbar-brand" href="<%= user_path(current_user) %>"><%=current_user.name %></a>
             <a class="navbar-brand" href="<%= logout_path %>">Log Out</a>
