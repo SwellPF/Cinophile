@@ -12,7 +12,7 @@ class SessionsController < ApplicationController
             redirect_to user_path(user)
         else
             flash[:notice] = 'Invalid username or password.'
-            redirect_to '/login'
+            redirect_to '/signin'
         end
     end
 
