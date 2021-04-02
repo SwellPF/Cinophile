@@ -3,7 +3,7 @@
 <h2>Hello, <%=@user.name %></h2>
  
 Email: <%= @user.email %>
-
+<br><br>
 
 <%= link_to "List of Movies", movies_path, class: "button" %>
 <% if logged_in? && current_user.admin %>
