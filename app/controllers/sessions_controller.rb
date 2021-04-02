@@ -6,7 +6,7 @@ class SessionsController < ApplicationController
 
     def omniauth
         user = User.from_omniauth(auth)
-        binding.pry
+        
         if user.valid?
             session[:user_id] = user.id
             redirect_to user_path(user)

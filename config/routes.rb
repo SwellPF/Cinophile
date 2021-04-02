@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :watchlists
   root 'application#hello'
   get 'auth/:provider/callback' => 'sessions#omniauth'
   get '/signin' => 'sessions#new'

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_150959) do
+ActiveRecord::Schema.define(version: 2021_04_02_193544) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -57,6 +57,16 @@ ActiveRecord::Schema.define(version: 2021_04_02_150959) do
     t.boolean "admin", default: false
     t.string "uid"
     t.string "provider"
+  end
+
+  create_table "watchlist_movies", force: :cascade do |t|
+  end
+
+  create_table "watchlists", force: :cascade do |t|
+    t.string "name"
+    t.integer "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
