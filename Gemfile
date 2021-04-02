@@ -68,6 +68,6 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 
 # Added by Paul for authentication through Facebook
-gem 'omniauth'
+gem 'omniauth', '1.9.1'
 gem 'omniauth-facebook'
 gem 'dotenv-rails'
