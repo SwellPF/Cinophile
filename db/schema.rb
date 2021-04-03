@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_02_193544) do
+ActiveRecord::Schema.define(version: 2021_04_03_214901) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -60,6 +60,8 @@ ActiveRecord::Schema.define(version: 2021_04_02_193544) do
   end
 
   create_table "watchlist_movies", force: :cascade do |t|
+    t.integer "watchlist_id"
+    t.integer "movie_id"
   end
 
   create_table "watchlists", force: :cascade do |t|
