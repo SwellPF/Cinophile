@@ -10,3 +10,14 @@ Email: <%= @user.email %>
 <% if logged_in? && current_user.admin %>
     <button><%= link_to "List of Users", users_path %></button>
 <% end %>
+
+<br><br>
+
+<b>My Watchlists</b>
+<button><%= link_to "Create New Watchlist", new_watchlist_path %></button><br>
+<ul>
+<% @user.watchlists.each do |watchlist| %>
+<li><%= link_to watchlist.name, watchlist_path(watchlist) %></li>
+<% end %></ul>
+
+<% binding.pry %>

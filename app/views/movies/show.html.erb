@@ -41,5 +41,14 @@
     <%= submit_tag("Submit my comment") %>
     <% end %>
 
+    
+    
+    <%= form_tag({controller: "watchlists", action: "create", method: "post"}) do %>
+    <%= select_tag "watchlist[watchlist_id]", options_from_collection_for_select(current_user.watchlists.all, :id, :name), {include_blank: true} %>
+    <%= hidden_field_tag "watchlist[movie_id]", @movie.id %>
+    <%= submit_tag("Add to Watchlist") %>
+    <% end %>
+
+    
 
 

@@ -6,8 +6,8 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
+  
 
-  # For Facebook passthrough authentication
   
   resources :user_movies
   resources :genres

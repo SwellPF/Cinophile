@@ -1,4 +1,9 @@
 class WatchlistMovie < ApplicationRecord
-    belongs_to :watchlist
-    belongs_to :movie
+
+    def new
+    end
+
+    def create
+    end
+
 end
