@@ -18,6 +18,5 @@ Email: <%= @user.email %>
 <ul>
 <% @user.watchlists.each do |watchlist| %>
 <li><%= link_to watchlist.name, watchlist_path(watchlist) %></li>
-<% end %></ul>
 
-<% binding.pry %>
+<% end %></ul>

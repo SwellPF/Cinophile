@@ -14,7 +14,7 @@ class WatchlistsController < ApplicationController
             redirect_to user_path(current_user)
             else
             flash[:notice]="Unable to add to watchlist."
-            redirect_to movies
+            redirect_to movies_path
             end
         end
         binding.pry
@@ -27,15 +27,9 @@ class WatchlistsController < ApplicationController
         end
     end
 
-    def add_to_watchlist(watchlist_id, movie_id)
-        binding.pry
-        wl = WatchlistMovie.new(watchlist_id, movie_id)
-        if wl.save
-            redirect_to current_user
-        else
-            flash[:notice]="Unable to add to watchlist."
-            redirect_to movies
-        end
+
+    def show
+        @watchlist = Watchlist.find(params[:id])
     end
 
     private

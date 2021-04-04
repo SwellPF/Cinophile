@@ -1,2 +1,7 @@
 <h1>Watchlist Show Page</h1>
-
+<% binding.pry %>
+<h2><%= @watchlist.name %></h2>
+<% binding.pry %>
+<% @watchlist.watchlist_movies.each do |movie| %>
+<%= movie.name %>
+<% end %>
