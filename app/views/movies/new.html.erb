@@ -1,19 +1,42 @@
 <h2>Create New Movie</h2>
+
+<% if @movie.errors.any? %>
+    <div id = "error explanation">
+        <h3>There were some errors:</h3>
+        <ul>
+            <% @movie.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+        </ul>
+    </div>
+    <% end %>
+
+
 <%= form_for @movie do |f| %>
+<div class="field<%=' field_with_errors' if @movie.errors[:title].any? %>">
 <p><%= f.label :title %><br>
 <%= f.text_field :title %></p>
+</div>
 
+<div class="field<%=' field_with_errors' if @movie.errors[:description].any? %>">
 <p><%= f.label :description %><br>
 <%= f.text_area :description, size: "60x12" %></p>
+</div>
 
+<div class="field<%=' field_with_errors' if @movie.errors[:genre].any? %>">
 <p><%= f.label :genre %><br>
 <%= f.collection_select :genre_id, Genre.all, :id, :name %></p>
+</div>
 
+<div class="field<%=' field_with_errors' if @movie.errors[:year_released].any? %>">
 <p><%= f.label :year_released %><br>
 <%= f.number_field :year_released %></p>
+</div>
 
-<p><%= f.label :image_link %><br>
+<div class="field<%=' field_with_errors' if @movie.errors[:image_link].any? %>">
+    <p><%= f.label :image_link %><br>
     <%= f.text_field :image_link %></p>
-    
+</div>
+
 <%= f.submit "Add Movie" %>
 <% end %>

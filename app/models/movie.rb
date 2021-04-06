@@ -8,9 +8,10 @@ class Movie < ApplicationRecord
 
   validates :title, presence: true
   validates :genre, presence: true
+  validates :description, :year_released, :image_link, presence: true
 
   scope :filter_by_genre, -> (genre) { where genre: genre }
-
+  scope :recent_releases, -> {where('year_released >= ?', Date.current.year - 5)}
   
 
 end

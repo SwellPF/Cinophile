@@ -20,8 +20,7 @@ class WatchlistsController < ApplicationController
         @watchlist = Watchlist.find(params[:id])
     end
 
-    def add_to_watchlist
-        
+    def add_to_watchlist  
         wl = WatchlistMovie.new(watchlist_id: params[:watchlist][:watchlist_id], movie_id: params[:watchlist][:movie_id])
         if wl.save
             redirect_to watchlist_path(params[:watchlist][:watchlist_id])

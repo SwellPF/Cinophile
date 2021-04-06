@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     def create
       
       @movie = Movie.find_by(id: params[:movie_id])
-      
       @comment = Comment.new(movie_id: params[:movie_id], user_id: current_user.id)
       @comment.content = params[:content]
       
