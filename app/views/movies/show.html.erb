@@ -16,7 +16,7 @@
 </table>
 
 <b>Add this movie to one of my watchlists:</b>
-<%= form_tag({controller: "watchlists", action: "create", method: "post"}) do %>
+<%= form_tag({controller: "watchlists", action: "add_to_watchlist", method: "post"}) do %>
 <%= select_tag "watchlist[watchlist_id]", options_from_collection_for_select(current_user.watchlists.all, :id, :name), {include_blank: true} %>
 
 <%= hidden_field_tag "watchlist[movie_id]", @movie.id %>

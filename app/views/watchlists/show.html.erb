@@ -1,8 +1,15 @@
 <h1>Watchlist Show Page</h1>
 Here are the movies on your <b><%= @watchlist.name %></b> watchlist:<br>
 
+<% if @watchlist.movies.size == 0 %>
+   <br> <b>There are currently no movies in this watchlist.</b>
+<% end %>
+
 <ul>
 <% @watchlist.movies.each do |movie| %>
 <li><%= link_to movie.title, movie_path(movie) %></li>
 <% end %>
 </ul>
+
+<button><%= link_to 'Show Movie List', movies_path %></button>
+<button><%= link_to 'My Homepage', current_user %></button>

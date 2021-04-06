@@ -6,9 +6,6 @@ class WatchlistsController < ApplicationController
     end
     
     def create
-        if params[:watchlist][:watchlist_id]
-            add_to_watchlist
-        end
         @watchlist = Watchlist.new(watchlist_params)
         @watchlist.user = current_user
         if @watchlist.save
@@ -26,9 +23,8 @@ class WatchlistsController < ApplicationController
     def add_to_watchlist
         
         wl = WatchlistMovie.new(watchlist_id: params[:watchlist][:watchlist_id], movie_id: params[:watchlist][:movie_id])
-        binding.pry
         if wl.save
-        redirect_to user_path(current_user)
+            redirect_to watchlist_path(params[:watchlist][:watchlist_id])
         else
         flash[:notice]="Unable to add to watchlist."
         redirect_to movies_path
