@@ -14,10 +14,20 @@
     </tr>
 </body>
 </table>
-<br><br>
 
+<b>Add this movie to one of my watchlists:</b>
+<%= form_tag({controller: "watchlists", action: "create", method: "post"}) do %>
+<%= select_tag "watchlist[watchlist_id]", options_from_collection_for_select(current_user.watchlists.all, :id, :name), {include_blank: true} %>
+
+<%= hidden_field_tag "watchlist[movie_id]", @movie.id %>
+<%= submit_tag("Add to Watchlist") %>
+<% end %>
+<br>
 <button><%= link_to "Return to Movie List", movies_path %></button>
-<button><%= link_to "Add Movie to My Watchlist", movies_path %></button>
+
+
+
+
 <% if current_user.admin? %>
 <button><%= link_to "Edit movie", edit_movie_path(@movie) %></button>
 <% end %>
@@ -40,15 +50,3 @@
     <%= hidden_field_tag "movie_id", @movie.id %>
     <%= submit_tag("Submit my comment") %>
     <% end %>
-
-    
-    
-    <%= form_tag({controller: "watchlists", action: "create", method: "post"}) do %>
-    <%= select_tag "watchlist[watchlist_id]", options_from_collection_for_select(current_user.watchlists.all, :id, :name), {include_blank: true} %>
-    <%= hidden_field_tag "watchlist[movie_id]", @movie.id %>
-    <%= submit_tag("Add to Watchlist") %>
-    <% end %>
-
-    
-
-

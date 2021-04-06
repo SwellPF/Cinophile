@@ -4,6 +4,7 @@ class User < ApplicationRecord
     has_many :comments
     has_many :watchlists
     has_many :movies, through: :comments
+    
     validates :name, :email, presence: true
     validates :email, uniqueness: true
 

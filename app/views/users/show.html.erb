@@ -6,15 +6,15 @@ Email: <%= @user.email %>
 <br><br>
 
 <button><%= link_to "List of Movies", movies_path %></button>
-<button><%= link_to "Manage My Watchlists", movies_path %></button>
+
 <% if logged_in? && current_user.admin %>
     <button><%= link_to "List of Users", users_path %></button>
 <% end %>
 
 <br><br>
 
-<b>My Watchlists</b>
-<button><%= link_to "Create New Watchlist", new_watchlist_path %></button><br>
+<b>My Watchlists </b>
+<button><%= link_to "Create New Watchlist", new_watchlist_path %></button>
 <ul>
 <% @user.watchlists.each do |watchlist| %>
 <li><%= link_to watchlist.name, watchlist_path(watchlist) %></li>

@@ -20,9 +20,9 @@
             <% @movies.each do |movie| %>
             <td><%= movie.title %> </td><td><%= movie.genre.name%></td><td><%=movie.year_released %></td>
         <td>
-            <%= link_to "View", movie_path(movie), class: "button" %>  
+            <button><%= link_to "View", movie_path(movie) %></button>
             <% if current_user.admin? %>  
-                <%= link_to "Edit", edit_movie_path(movie), class: "button" %>
+                <button> <%= link_to "Edit", edit_movie_path(movie) %> </button>
                <% end %>
         </td>
         
@@ -31,6 +31,5 @@
 </table>
 
 <% if logged_in? && current_user.admin? %>
-    <%= link_to 'Add New Movie', new_movie_path, class: "button" %>
     <%= button_to "Add New Movie", new_movie_path, :method => "get" %>
 <% end %>

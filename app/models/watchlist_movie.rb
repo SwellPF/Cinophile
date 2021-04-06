@@ -1,7 +1,7 @@
 class WatchlistMovie < ApplicationRecord
 
-    belongs_to :movies
-    belongs_to :watchlists
+    belongs_to :movie
+    belongs_to :watchlist
 
     def new
     end
@@ -9,4 +9,6 @@ class WatchlistMovie < ApplicationRecord
     def create
     end
 
+   
+    
 end
