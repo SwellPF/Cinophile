@@ -30,11 +30,8 @@ class WatchlistsController < ApplicationController
         end
     end
 
-    def destroy_from_watchlist
-        binding.pry
-        WatchlistMovie.find(watchlist_id: params[:watchlist][:watchlist_id], movie_id: params[:watchlist][:movie_id]).destroy
-        redirect_to watchlist_path(params[:watchlist][:watchlist_id])
-        
+    def edit
+        @watchlist = Watchlist.find(params[:id])
       end
 
     private
