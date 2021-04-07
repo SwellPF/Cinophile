@@ -1,0 +1,12 @@
+<h1> I'm the Edit page for comments!!!!</h1>
+
+<%= form_for comment do |f| %>
+
+<p><%= f.label :content %><br>
+<%= f.text_area :content, size: "60x12" %></p>
+
+<%= f.submit "Post comment" %>
+    
+<% end %>
+
+<%= button_to 'Return to movie list', movies_path, method: 'get' %>

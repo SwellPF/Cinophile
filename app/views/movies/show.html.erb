@@ -35,11 +35,12 @@
 <b><h3>User Comments:</h3></b>
 <% if @movie.comments.count == 0 %>
     Be the first to comment on this movie!
-    <% end %>
+<% end %>
    <ul>
        <% @movie.comments.each do |comment| %>
        <li>
-       <b><%= comment.content %></b> <br>by: <%= comment.user.name %> on <%= comment.updated_at.strftime("%B %e, %Y at %l:%M%P") %> ET<br><br>
+       <b><%= comment.content %></b> <br>by: <%= comment.user.name %> on <%= comment.updated_at.strftime("%B %e, %Y at %l:%M%P") %> ET
+       <br><br>
     </li>
     <% end %>
 </ul>
