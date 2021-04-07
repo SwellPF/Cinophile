@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :watchlists
   root 'application#hello'
   get 'auth/:provider/callback' => 'sessions#omniauth'
   get '/signin' => 'sessions#new'
@@ -7,11 +6,13 @@ Rails.application.routes.draw do
   get '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
   post 'watchlists/add_to_watchlist' => 'watchlists/add_to_watchlist'
-
+  
   
   resources :user_movies
   resources :genres
-  resources :users
+  resources :users do
+    resources :watchlists
+    end
   resources :movies do 
     resources :comments, only: [:index, :show]
   end

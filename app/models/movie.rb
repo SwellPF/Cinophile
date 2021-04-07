@@ -12,6 +12,6 @@ class Movie < ApplicationRecord
 
   scope :filter_by_genre, -> (genre) { where genre: genre }
   scope :recent_releases, -> {where('year_released >= ?', Date.current.year - 5)}
-  
+  scope :most_commented, -> {Comment.group(:movie_id).count}
 
 end

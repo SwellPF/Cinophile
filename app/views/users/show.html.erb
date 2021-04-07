@@ -14,9 +14,9 @@ Email: <%= @user.email %>
 <br><br>
 
 <b>My Watchlists </b>
-<button><%= link_to "Create New Watchlist", new_watchlist_path %></button>
+<button><%= link_to "Create New Watchlist", new_user_watchlist_path(:user_id) %></button>
 <ul>
 <% @user.watchlists.each do |watchlist| %>
-<li><%= link_to watchlist.name, watchlist_path(watchlist) %></li>
+<li><%= link_to watchlist.name, user_watchlist_path(watchlist) %></li>
 
 <% end %></ul>

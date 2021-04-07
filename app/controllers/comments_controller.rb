@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
       if @comment.save
           redirect_to @movie
       else
-          render 'movie/show'
+          flash[:notice] = "Comment cannot be blank."
+          redirect_to @movie
       end
     end
 
