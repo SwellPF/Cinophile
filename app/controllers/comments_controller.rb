@@ -30,17 +30,6 @@ class CommentsController < ApplicationController
         end
       end
          
-    def update
-        @comment = Comment.find_by(params[:id])
-        if comment.user_id == current_user
-          @comment.update(comment_params)
-        end
-      if @comment.save
-          redirect_to @movie
-      else
-          render 'movie/show'
-      end
-    end
 
     def show
         if params[:movie_id]

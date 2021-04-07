@@ -13,6 +13,7 @@ Rails.application.routes.draw do
   resources :users do
     resources :watchlists
     end
+  resources :watchlists
   resources :movies do 
     resources :comments, only: [:index, :show]
   end

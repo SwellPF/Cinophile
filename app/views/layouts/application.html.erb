@@ -1,49 +1,31 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Cinophile</title>
-    <%= csrf_meta_tags %>
+  
+<head>
+  <title>CINOPHILE</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+</div>
+<body>
+<header>
+  <div class="container header nav">
+    <b>CINOPHILE</b>
+  <a class="nav" href="<%= root_url %>">Home</a>
+  <% if !logged_in? %>
+      <a class="nav" href="<%= signup_url %>">Sign Up</a>
+      <a class="nav" href="<%= signin_url %>">Log In</a>
+      <%= link_to "Log In With Facebook", '/auth/facebook', class: "nav", :method => "post" %>
+      <%= link_to "Log In With Google", '/auth/google_oauth2', class: "nav", :method => "post" %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-      <!--      <span class="sr-only">Toggle navigation</span> -->
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        <a class="navbar-brand" href="<%= root_url %>">Home </a>
-        <% if !logged_in? %>
-            <a class="navbar-brand" href="<%= signup_url %>">Sign Up </a>
-            <a class="navbar-brand" href="<%= signin_url %>">Log In </a>
-            <%= link_to "Log In With Facebook", '/auth/facebook', class: "navbar-brand", :method => "post" %>
-            <%= link_to "Log In With Google", '/auth/google_oauth2', class: "navbar-brand", :method => "post" %>
-          <%= button_to "Log in with Facebook", '/auth/facebook' %>
-          <%= button_to "Log in with Google", '/auth/google_oauth2' %>
-
-         
-        <% else %>
-            <a class="navbar-brand" href="<%= user_path(current_user) %>"> <%=current_user.name %>'s Profile</a>
-            <a class="navbar-brand" href="<%= logout_path %>">Log Out</a>
+      <% else %>
+            <a class="nav" href="<%= user_path(current_user) %>"><%=current_user.name %>'s Profile</a>
+            <a class="nav" href="<%= logout_path %>">Log Out</a>
         <% end %>
-        </div>
-        <div class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-            
-          </ul>
-        </div><!--/.nav-collapse -->
       </div>
-    </div>
+</header>
+<%= yield %>
 
-    <!-- content -->
-    <div class="container"  role="main">
-      <%= yield %>
-    </div>
-  </body>
+</body>
 </html>

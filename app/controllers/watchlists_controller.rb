@@ -2,7 +2,6 @@ class WatchlistsController < ApplicationController
 
     def new
         @watchlist = Watchlist.new
-        
     end
     
     def create

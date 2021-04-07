@@ -1,67 +1,66 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+.container {
+  display: flex;  
+  flex-flow: row wrap;
+  font-weight: normal;
+  text-align: left;
+}
 
- /*
- @import "bootstrap-sprockets";
- @import "bootstrap";
- */
- 
- body {
-   padding-top: 70px;
-   padding-bottom: 30px;
- }
- 
- .theme-dropdown .dropdown-menu {
-   position: static;
-   display: block;
-   margin-bottom: 20px;
- }
- 
- .theme-showcase > p > .btn {
-   margin: 5px 0;
- }
- 
- .center {
-   text-align: center;
-   display: block;
-   margin-left: auto;
-   margin-right: auto;
-   width: 50%;
- }
- 
- .pic,
- .info {
-   padding: 20px;
-   display: inline-block;
-   background-color: #eeeeee;
-   border-radius: 7px;
-   vertical-align: middle;
-   margin: 10px;
- }
- 
- .info {
-   height: 290px;
-   text-align: left;
- }
- 
+.container > * {
+  padding: 5px;
+  flex: auto;
+}
+
+.header {
+  background: deepskyblue;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.nav {
+  text-align: left;
+  padding: 5px;
+  display: inline-block;
+}
+.footer {
+  background: lightgreen;
+}
+
+.main {
+  text-align: left;
+  background: deepskyblue;
+}
+
+.aside-1 {
+  background: gold;
+}
+
+.aside-2 {
+  background: hotpink;
+}
+
+@media all and (min-width: 600px) {
+  .aside { flex: 1 0 0; }
+}
+
+@media all and (min-width: 800px) {
+  .main    { flex: 3 0px; }
+  .aside-1 { order: 1; } 
+  .main    { order: 2; }
+  .aside-2 { order: 3; }
+  .footer  { order: 4; }
+}
+
+body {
+  padding: 2em; 
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
+}
 
 
-
- /*
- */
+.poster {
+    background: white;
+    width: 15vw; 
+    justify-content: center;
+}
 
  .button {
     font: bold 11px Arial;
