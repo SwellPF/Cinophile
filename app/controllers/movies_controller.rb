@@ -5,10 +5,16 @@ class MoviesController < ApplicationController
     end
 
     def index
-    # binding.pry
+     
         if current_user
-            if params[:movie] && params[:movie][:genre_id].present?
+            if params[:movie] && params[:movie][:genre_id].present? && params[:newreleases]
+                @movies = Movie.filter_by_genre(params[:movie][:genre_id]).recent_releases
+            
+            elsif params[:movie] && params[:movie][:genre_id].present?
                 @movies = Movie.filter_by_genre(params[:movie][:genre_id])
+            elsif
+                params[:newreleases] 
+                    @movies = Movie.recent_releases
             else
                 @movies = Movie.all
             end

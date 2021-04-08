@@ -3,6 +3,7 @@
   flex-flow: row wrap;
   font-weight: normal;
   text-align: left;
+  width: 100%;
 }
 
 .container > * {
@@ -77,3 +78,6 @@ body {
     border: 1px solid red !important;
   }
   
+  .custom-alert {
+    color: #f30c08;
+  }

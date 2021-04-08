@@ -45,7 +45,7 @@
     </li>
     <% end %>
 </ul>
-
+<div class="custom-alert"><%=flash[:notice] %></div>
     <%= form_tag({controller: "comments", action: "create"}, method: "post") do %>
     <b><%= label_tag(:comment, "Enter your comment:") %></b><br>
     <%= text_area_tag :content, nil, size: "55x4" %> <br>

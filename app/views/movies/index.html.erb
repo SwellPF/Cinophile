@@ -4,6 +4,8 @@
     <%= form_tag(movies_path, {method: :get}) do %>
             <%= select_tag "movie[genre_id]", options_from_collection_for_select(Genre.all, :id, :name), {include_blank: true} %>
             <%= submit_tag "Apply Filter" %>
+            <%= label_tag 'new_releases', 'New Releases Only?' %>
+            <%= check_box_tag 'newreleases' %>
     <% end %>
 
 <table class="table">

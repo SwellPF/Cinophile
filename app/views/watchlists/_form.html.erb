@@ -1,3 +1,14 @@
+<% if @watchlist.errors.any? %>
+    <div id = "error explanation">
+        <h3>There were some errors:</h3>
+        <ul>
+            <% @watchlist.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+                <% end %>
+        </ul>
+    </div>
+    <% end %>
+
 <%= form_for @watchlist do |f| %>
 
 <p><%= f.label :name %><br>

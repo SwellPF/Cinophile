@@ -1,5 +1,5 @@
 <h2>Log in to Cinophile!</h2>
-<%= flash[:notice] %>
+<div class="custom-alert"><%= flash[:notice] %></div>
 
 <%= form_tag({controller: 'sessions', action: 'create', method: 'post'}) do %>
 <label>Email Address:</label>
