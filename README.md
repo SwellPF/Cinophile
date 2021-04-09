@@ -11,15 +11,13 @@
 * [Contact](#contact)
 
 ## General info
-Add more general information about project. What the purpose of the project is? Motivation?
+This application was built as my Ruby on Rails project for Flatiron School.
 
 ## Technologies
 * Ruby on Rails
 * Ruby OmniAuth gems for user authentication via Facebook and Google
-* Tech 3 - version 3.0
 
 ## Setup
-Describe how to install / setup your local environement / add link to demo version.
 
 ### Clone the Repository
 ```
@@ -70,34 +68,3 @@ This application is my class project for Flatiron School to demonstrate my profi
 ## Contact
 Created by Paul Cinoman. You can contact me by email at [swellpf@gmail.com](mailto:swellpf@gmail.com). Check out my [Blog](http://www.pconthepc.com) - feel free to contact me!
 
-
-
-
-
-
-
-
-# README
-
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
