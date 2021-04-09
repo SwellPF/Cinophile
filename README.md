@@ -46,7 +46,7 @@ Project is: Completed as of 4/9/2021.
 This application is my class project for Flatiron School to demonstrate my proficiency using Ruby on Rails.
 
 ## Contact
-Created by Paul Cinoman [@swellpf@gmail.com](@swellpf@gmail.com) [Blog](https://www.pconthepc.com) - feel free to contact me!
+Created by Paul Cinoman [Email](mailto:swellpf@gmail.com) [Blog](http://www.pconthepc.com) - feel free to contact me!
 
 
 
