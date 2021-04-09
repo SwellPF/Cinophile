@@ -1,5 +1,5 @@
-# Project Name
-> Here goes your awesome project description!
+# Cinophile
+> An application that allows users to view movie details, read comments from other users about a specific movie and add comments of their own.  Users can create named watchlists and add movies to their watchlists.
 
 ## Table of contents
 * [General info](#general-info)
@@ -14,11 +14,8 @@
 ## General info
 Add more general information about project. What the purpose of the project is? Motivation?
 
-## Screenshots
-![Example screenshot](./img/screenshot.png)
-
 ## Technologies
-* Tech 1 - version 1.0
+* Ruby on Rails
 * Tech 2 - version 2.0
 * Tech 3 - version 3.0
 
@@ -31,22 +28,25 @@ Show examples of usage:
 
 ## Features
 List of features ready and TODOs for future development
-* Awesome feature 1
-* Awesome feature 2
-* Awesome feature 3
+* View list of movies and filter by genre and/or "new releases"
+* View movie details and comments from other users
+* Add their own comments about a movie
+* Create an unlimited number of named watchlists
+* Users can add movies to any of their watchlists
 
 To-do list:
-* Wow improvement to be done 1
-* Wow improvement to be done 2
+* Provide the ability for users to remove movies from a watchlist (most likely after watching the movie!)
+* Add a "4-star" rating system for users to grade a movie and list the average cumulative rating
+* Additional filters (such as most commented, highest rating, most watchlisted)
 
 ## Status
 Project is: Completed as of 4/9/2021.
 
 ## Inspiration
-Add here credits. Project inspired by..., based on...
+This application is my class project for Flatiron School to demonstrate my proficiency using Ruby on Rails.
 
 ## Contact
-Created by Paul Cinoman [@swellpf@gmail.com](https://www.pconthepc.com) - feel free to contact me!
+Created by Paul Cinoman [@swellpf@gmail.com](@swellpf@gmail.com) [Blog](https://www.pconthepc.com) - feel free to contact me!
 
 
 
