@@ -22,6 +22,32 @@ Add more general information about project. What the purpose of the project is? 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
 
+### Clone the Repository
+```
+git clone git@github.com:juliendargelos/project.git
+cd project
+```
+### Check your Ruby Version
+```
+ruby -v
+```
+Cinophile was developed using Ruby v2.6.1.  Update your Ruby installation as necessary.
+
+### Install dependencies
+```
+bundle
+```
+
+### Initialize the database
+```
+rails db:create db:migrate db:seed
+```
+### Start Rails server
+```
+rails s
+```
+And now you can visit the site with the URL http://localhost:3000
+ 
 ## Features
 List of features ready and TODOs for future development
 * Users can manually create an account in the app or use Facebook or Google authentication
