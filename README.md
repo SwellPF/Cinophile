@@ -16,18 +16,15 @@ Add more general information about project. What the purpose of the project is? 
 
 ## Technologies
 * Ruby on Rails
-* Tech 2 - version 2.0
+* Ruby OmniAuth gems for user authentication via Facebook and Google
 * Tech 3 - version 3.0
 
 ## Setup
 Describe how to install / setup your local environement / add link to demo version.
 
-## Code Examples
-Show examples of usage:
-`put-your-code-here`
-
 ## Features
 List of features ready and TODOs for future development
+* Users can manually create an account in the app or use Facebook or Google authentication
 * View list of movies and filter by genre and/or "new releases"
 * View movie details and comments from other users
 * Add their own comments about a movie
@@ -43,10 +40,10 @@ To-do list:
 Project is: Completed as of 4/9/2021.
 
 ## Inspiration
-This application is my class project for Flatiron School to demonstrate my proficiency using Ruby on Rails.
+This application is my class project for Flatiron School to demonstrate my proficiency developing in Ruby on Rails.
 
 ## Contact
-Created by Paul Cinoman [Email](mailto:swellpf@gmail.com) [Blog](http://www.pconthepc.com) - feel free to contact me!
+Created by Paul Cinoman [swellpf@gmail.com](mailto:swellpf@gmail.com) [Blog](http://www.pconthepc.com) - feel free to contact me!
 
 
 
