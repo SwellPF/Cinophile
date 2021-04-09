@@ -23,14 +23,14 @@ Describe how to install / setup your local environement / add link to demo versi
 
 ### Clone the Repository
 ```
-git clone git@github.com:juliendargelos/project.git
-cd project
+git clone git@github.com:swellpf/cinophile.git
+cd cinophile
 ```
 ### Check your Ruby Version
 ```
 ruby -v
 ```
-Cinophile was developed using Ruby v2.6.1.  Update your Ruby installation as necessary.
+Cinophile was developed using Ruby v2.6.1 and Rails v5.2.5.  Update your Ruby installation as necessary.
 
 ### Install dependencies
 ```
