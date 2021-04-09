@@ -5,7 +5,8 @@ class MoviesController < ApplicationController
     end
 
     def index
-     
+        @mostcomments = Movie.most_commented
+      
         if current_user
             if params[:movie] && params[:movie][:genre_id].present? && params[:newreleases]
                 @movies = Movie.filter_by_genre(params[:movie][:genre_id]).recent_releases
