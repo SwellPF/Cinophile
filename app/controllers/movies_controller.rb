@@ -1,5 +1,7 @@
 class MoviesController < ApplicationController
     require 'pry'
+    before_action :require_login
+    
     def new
         @movie = Movie.new
     end

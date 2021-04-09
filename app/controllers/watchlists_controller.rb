@@ -1,5 +1,6 @@
 class WatchlistsController < ApplicationController
-
+    before_action :require_login
+    
     def new
         @watchlist = Watchlist.new
     end
