@@ -30,7 +30,11 @@ class UsersController < ApplicationController
     end
 
     def edit
-        @user = User.find_by(id: params[:id])
+        if current_user.admin
+            @user = User.find_by(id: params[:id])
+        else
+            redirect_to '/'
+        end
     end
 
     def update

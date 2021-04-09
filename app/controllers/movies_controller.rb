@@ -1,9 +1,13 @@
 class MoviesController < ApplicationController
     require 'pry'
     before_action :require_login
-    
+
     def new
-        @movie = Movie.new
+        if current_user.admin
+            @movie = Movie.new
+        else
+            redirect_to movies_path
+        end
     end
 
     def index
@@ -45,7 +49,11 @@ class MoviesController < ApplicationController
     end
 
     def edit
-        @movie = Movie.find_by(id: params[:id])
+        if current_user.admin
+            @movie = Movie.find_by(id: params[:id])
+        else
+            redirect_to movies_path
+        end
     end
 
     def update
@@ -56,6 +64,7 @@ class MoviesController < ApplicationController
             render 'edit'
         end
     end
+
 
 private
 

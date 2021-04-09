@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get '/signup' => 'users#new'
   post 'watchlists/add_to_watchlist' => 'watchlists/add_to_watchlist'
   
-  
   resources :user_movies
   resources :genres
   resources :users do
