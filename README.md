@@ -3,7 +3,6 @@
 
 ## Table of contents
 * [General info](#general-info)
-* [Screenshots](#screenshots)
 * [Technologies](#technologies)
 * [Setup](#setup)
 * [Features](#features)
@@ -47,7 +46,7 @@ rails db:create db:migrate db:seed
 rails s
 ```
 And now you can visit the site with the URL http://localhost:3000
- 
+
 ## Features
 List of features ready and TODOs for future development
 * Users can manually create an account in the app or use Facebook or Google authentication
@@ -69,7 +68,7 @@ Project is: Completed as of 4/9/2021.
 This application is my class project for Flatiron School to demonstrate my proficiency developing in Ruby on Rails.
 
 ## Contact
-Created by Paul Cinoman [swellpf@gmail.com](mailto:swellpf@gmail.com) [Blog](http://www.pconthepc.com) - feel free to contact me!
+Created by Paul Cinoman. You can contact me by email at [swellpf@gmail.com](mailto:swellpf@gmail.com). Check out my [Blog](http://www.pconthepc.com) - feel free to contact me!
 
 
 
