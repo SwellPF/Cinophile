@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/logout' => 'sessions#destroy'
   get '/signup' => 'users#new'
-  post 'watchlists/add_to_watchlist' => 'watchlists/add_to_watchlist'
+  post 'watchlists/add_to_watchlist' => 'watchlists#add_to_watchlist'
   
   resources :user_movies
   resources :genres
