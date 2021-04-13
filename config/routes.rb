@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'sub_genres/index'
   root 'application#hello'
   get 'auth/:provider/callback' => 'sessions#omniauth'
   get '/signin' => 'sessions#new'
@@ -8,7 +9,9 @@ Rails.application.routes.draw do
   post 'watchlists/add_to_watchlist' => 'watchlists#add_to_watchlist'
   
   resources :user_movies
-  resources :genres
+  resources :genres do
+    resources :sub_genres
+  end
   resources :users do
     resources :watchlists
     end

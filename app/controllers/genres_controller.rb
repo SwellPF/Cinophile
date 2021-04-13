@@ -1,6 +1,5 @@
 class GenresController < ApplicationController
-    before_action :require_login
-    
+
     def new
         @genre=Genre.new
     end

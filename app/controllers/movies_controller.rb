@@ -1,6 +1,6 @@
 class MoviesController < ApplicationController
     require 'pry'
-    before_action :require_login
+    
 
     def new
         if current_user.admin

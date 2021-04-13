@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_03_223024) do
+ActiveRecord::Schema.define(version: 2021_04_12_190647) do
 
   create_table "comments", force: :cascade do |t|
     t.text "content"
@@ -37,6 +37,13 @@ ActiveRecord::Schema.define(version: 2021_04_03_223024) do
     t.integer "year_released"
     t.string "image_link"
     t.index ["genre_id"], name: "index_movies_on_genre_id"
+  end
+
+  create_table "sub_genres", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "genre_id"
   end
 
   create_table "user_movies", force: :cascade do |t|
